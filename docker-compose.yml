@@ -1,0 +1,23 @@
+# docker-compose.yml
+# Add this top-level entry
+redis:
+  image: redis
+  container_name: lookup
+  expose:
+    - 6379
+
+app:
+  # some definitions
+  links:
+    - redis
+  build: ./
+  volumes:
+    - ./:/var/www/app
+  ports:
+    - 5000:5000
+  environment:
+    - REDIS_URL=redis://lookup
+    - NODE_ENV=development
+    - PORT=5000
+  # command:
+  #   sh -c 'npm i && npm start'

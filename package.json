@@ -1,0 +1,17 @@
+{
+  "name": "SRR",
+  "version": "1.0.0",
+  "description": "Spacial Resource Registry (SRR)",
+  "main": "src/index.js",
+  "author": "Akash@bwowser.com",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "fastify": "^3.22.1",
+    "redis": "^3.1.2"
+  }
+}
